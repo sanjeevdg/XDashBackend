@@ -69,7 +69,7 @@ try {
 let body = {"query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
-
+/*
         fetch('https://www.xdash.ai/api/query',{
          method:'POST',
             headers: {
@@ -84,31 +84,34 @@ let body = {"query": req.body.query,
             
                 resp.json().then(async (data) => {           
       	//let b = Buffer.from(JSON.stringify(resp.body));
-        /*    const buffer = await resp.arrayBuffer();
-const bytes = new Uint8Array(buffer); */   
+            const buffer = await resp.arrayBuffer();
+const bytes = new Uint8Array(buffer);    
     
     console.log('POST-RESPONSE-BODY',data);
             res.send(data);
  })
 
-}) 
-/*
-        axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
-                                "search_uuid":createQueryHash2(req.body.query) ,    
-            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} , {
+})
+
+{
     withCredentials: true,
     headers: {
        'Content-Type': 'application/json',
-        'Transfer-Encoding':'chunked',
         'Connection':'keep-alive',
          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept-Encoding': 'gzip, deflate, br'
-    }} ).then((response) => {
+
+    }}
+
+    */
+
+        axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
+                                "search_uuid":createQueryHash2(req.body.query) ,    
+            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} ).then((response) => {
        // setLoading(false);
         let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
         let dtarr = JSON.parse(ltdata);
 
-      //  console.log('SOURCES-ARRAY-->',dtarr)
+        console.log('SOURCES-ARRAY-->',dtarr)
         //setResults2(dtarr); 
         //setResults2Loaded(true);  
 
