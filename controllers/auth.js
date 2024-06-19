@@ -82,7 +82,7 @@ let body = {"query": req.body.query,
            },
             body: JSON.stringify(body)
              }).then(async (resp) => {    
-        //resp.body
+        
             //.then(async (data) => {           
       	
             const buffer = await resp.arrayBuffer();
