@@ -73,8 +73,9 @@ try {
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} , {
     withCredentials: true,
     headers: {
-        'Access-Control-Allow-Origin': '*', 
-        'Content-Type': 'text/html',
+       'Content-Type': 'application/json',
+        'Transfer-Encoding':'chunked',
+        'Connection':'keep-alive',
         'Accept-Encoding': 'gzip, deflate, br'
     }} ).then((response) => {
        // setLoading(false);
