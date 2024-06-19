@@ -83,7 +83,7 @@ let body = {"query": req.body.query,
              }).then(async (resp) => {            
             
                 //.then(async (data) => {           
-      	let b = Buffer.from(resp.body._outBuffer.data);
+      	let b = Buffer.from(JSON.stringify(resp.body));
         /*    const buffer = await resp.arrayBuffer();
 const bytes = new Uint8Array(buffer); */    
     console.log('POST-RESPONSE-BODY',b.toString());
