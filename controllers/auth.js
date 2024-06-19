@@ -63,7 +63,6 @@ const queryXdashApi = async (req,res,next) => {
 
 
 console.log('received request body-->',req.body);
-
 try {
       
         console.log('my query received is ',req.body.query);
@@ -84,12 +83,13 @@ let body = {"query": req.body.query,
             body: JSON.stringify(body)
              }).then(async (resp) => {
 
-        resp.text().then(async (data) => {
+        //resp.body
+            //.then(async (data) => {
             
-          console.log('reguser==',data);
-            res.write(data);
+          console.log('reguser==',resp.body);
+            res.write(resp.body);
 
-})
+//})
 
 }) 
 /*
