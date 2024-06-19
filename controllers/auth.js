@@ -85,7 +85,7 @@ let body = {"query": req.body.query,
     
         //resp.body
             //.then(async (data) => {            
-         for await (const chunk of response.body) {
+         for await (const chunk of resp.body) {
 		console.log(JSON.parse(chunk.toString()));
             res.write(JSON.parse(chunk.toString()));
 }
