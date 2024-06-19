@@ -107,37 +107,40 @@ const bytes = new Uint8Array(buffer);
         axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} ).then((response) => {
-       // setLoading(false);
-        let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
-        let dtarr = JSON.parse(ltdata);
 
-        console.log('SOURCES-ARRAY-->',dtarr)
+            console.log('RESPONSE-BODY=',response.body);
+            res.send(response.body);
+       // setLoading(false);
+    ///    let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
+     ///   let dtarr = JSON.parse(ltdata);
+
+      ///  console.log('SOURCES-ARRAY-->',dtarr)
         //setResults2(dtarr); 
         //setResults2Loaded(true);  
 
     //    console.log('REPOSNSE',response.data);
         
-        let ftdata  = response.data.substring(response.data.indexOf('__LLM_RESPONSE__')+16,response.data.indexOf('__RELATED_QUESTIONS__'));
+  ///      let ftdata  = response.data.substring(response.data.indexOf('__LLM_RESPONSE__')+16,response.data.indexOf('__RELATED_QUESTIONS__'));
 
        // setResults(ftdata); 
        // setResultsLoaded(true);
      //   console.log('LLM_RESPONSE-->',ftdata);
 
-        let rqdata = response.data.substring(response.data.indexOf('__RELATED_QUESTIONS__')+21,response.data.length); 
+///        let rqdata = response.data.substring(response.data.indexOf('__RELATED_QUESTIONS__')+21,response.data.length); 
         
 
-        let rqarr = JSON.parse(rqdata);
+   ///     let rqarr = JSON.parse(rqdata);
         //setRelatedQuestions(rqarr);
         //setRelatedQuestionsLoaded(true);
      //   console.log('RELATED-QUESTIONS-ARRAY-->',rqarr);
 
 
-let hstr = md2.render(ftdata);  
+/// let hstr = md2.render(ftdata);  
 
 
- let hstra = newSources(dtarr);
+/// let hstra = newSources(dtarr);
 
- let hstrb = myRelatedQuestions(rqarr); 
+/// let hstrb = myRelatedQuestions(rqarr); 
 /*
  res.writeHead(200, {
     'Content-Type': 'text/plain; charset=utf-8',
