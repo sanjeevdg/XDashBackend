@@ -82,13 +82,14 @@ let body = {"query": req.body.query,
             body: JSON.stringify(body)
              }).then(async (resp) => {            
             
-                //.then(async (data) => {           
-      	let b = Buffer.from(JSON.stringify(resp.body));
+                resp.json().then(async (data) => {           
+      	//let b = Buffer.from(JSON.stringify(resp.body));
         /*    const buffer = await resp.arrayBuffer();
-const bytes = new Uint8Array(buffer); */    
-    console.log('POST-RESPONSE-BODY',b.toString());
-            res.send(b.toString());
-// })
+const bytes = new Uint8Array(buffer); */   
+    
+    console.log('POST-RESPONSE-BODY',data);
+            res.send(data);
+ })
 
 }) 
 /*
