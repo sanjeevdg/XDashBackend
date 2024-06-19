@@ -82,13 +82,13 @@ let body = {"query": req.body.query,
            },
             body: JSON.stringify(body)
              }).then(async (resp) => {
-
+    
         //resp.body
-            //.then(async (data) => {
-            
-          console.log('reguser==',resp.body);
-            res.write(resp.body);
-
+            //.then(async (data) => {            
+         for await (const chunk of response.body) {
+		console.log(JSON.parse(chunk.toString()));
+            res.write(JSON.parse(chunk.toString()));
+}
 //})
 
 }) 
