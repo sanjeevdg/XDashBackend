@@ -70,7 +70,6 @@ let body = {"query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
 
-
         fetch('https://www.xdash.ai/api/query',{
          method:'POST',
             headers: {
@@ -89,8 +88,7 @@ const bytes = new Uint8Array(buffer); */
     
     console.log('POST-RESPONSE-BODY',data);
             res.send(data);
-
-//})
+})
 
 }) 
 /*
