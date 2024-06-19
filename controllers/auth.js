@@ -86,7 +86,7 @@ let body = {"query": req.body.query,
             //.then(async (data) => {           
       	
             const buffer = await resp.arrayBuffer();
-const bytes = new Uint32Array(buffer);
+const bytes = new Uint8Array(buffer);
     console.log('POST-RESPONSE-BODY',bytes);
             res.send(bytes);
 
