@@ -74,7 +74,8 @@ try {
     withCredentials: true,
     headers: {
         'Access-Control-Allow-Origin': '*', 
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/html',
+        'Accept-Encoding': 'gzip, deflate, br'
     }} ).then((response) => {
        // setLoading(false);
         let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
