@@ -85,7 +85,7 @@ let body = {"query": req.body.query,
         //resp.body
             //.then(async (data) => {            
       	console.log('POST-RESPONSE-BODY',resp.body);
-            res.write(resp.body);
+            res.send(resp.body);
 
 //})
 
@@ -173,7 +173,7 @@ let hstr = md2.render(ftdata);
 //res.write(JSON.stringify({type:'sources',text:`${hstra}`}),'utf-8',()=> {console.log('SENTTTTTT222');});
 //res.write(JSON.stringify({type:'related',text: `${hstrb}`}),'utf-8',()=> {console.log('SENTTTTTT333');});
 
- res.end();
+// res.end();
 
 
 //res.flush();
