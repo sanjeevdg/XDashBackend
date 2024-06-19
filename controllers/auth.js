@@ -84,7 +84,7 @@ let body = {"query": req.body.query,
             body: JSON.stringify(body)
              }).then(async (resp) => {
 
-        resp.json().then(async (data) => {
+        resp.text().then(async (data) => {
             
           console.log('reguser==',data);
             res.write(data);
