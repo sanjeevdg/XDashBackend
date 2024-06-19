@@ -81,14 +81,12 @@ let body = {"query": req.body.query,
                   'Expires': 0
            },
             body: JSON.stringify(body)
-             }).then(async (resp) => {
-    
+             }).then(async (resp) => {    
         //resp.body
             //.then(async (data) => {            
-         for await (const chunk of resp.body) {
-		console.log(JSON.parse(chunk.toString()));
-            res.write(JSON.parse(chunk.toString()));
-}
+      	console.log('POST-RESPONSE-BODY',resp.body);
+            res.write(resp.body);
+
 //})
 
 }) 
