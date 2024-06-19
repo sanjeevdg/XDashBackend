@@ -75,7 +75,7 @@ try {
     headers: {
         'Access-Control-Allow-Origin': '*', 
         'Content-Type': 'application/json'
-    } ).then((response) => {
+    }} ).then((response) => {
        // setLoading(false);
         let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
         let dtarr = JSON.parse(ltdata);
