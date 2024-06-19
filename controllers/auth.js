@@ -67,7 +67,32 @@ console.log('received request body-->',req.body);
 try {
       
         console.log('my query received is ',req.body.query);
+let body = {"query": req.body.query,
+                                "search_uuid":createQueryHash2(req.body.query) ,    
+            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
 
+
+        fetch('https://www.xdash.ai/api/query',{
+         method:'POST',
+            headers: {
+                  'Content-Type':'application/json',
+                  'Accept':'application/json',
+                  'Cache-Control': 'no-cache',
+                  'Pragma': 'no-cache',
+                  'Expires': 0
+           },
+            body: JSON.stringify(body)
+             }).then(async (resp) => {
+
+        resp.json().then(async (data) => {
+            
+          console.log('reguser==',data);
+            res.write(data);
+
+})
+
+}) 
+/*
         axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} , {
@@ -134,7 +159,8 @@ let hstr = md2.render(ftdata);
 //const getDatab = () => {'type':'related','text': `${hstrb}`};
 
 // setInterval(() => {
-res.write(JSON.stringify([{type: 'answer',text: `${hstr}`},{type:'sources',text:`${hstra}`},{type:'related',text: `${hstrb}`}]),'utf-8',()=> {console.log('SENTTTTTT111');});
+    
+//res.write(JSON.stringify([{type: 'answer',text: `${hstr}`},{type:'sources',text:`${hstra}`},{type:'related',text: `${hstrb}`}]),'utf-8',()=> {console.log('SENTTTTTT111');});
 //}, 10000); 
 
 // setInterval(() => {
@@ -153,9 +179,9 @@ res.write(JSON.stringify([{type: 'answer',text: `${hstr}`},{type:'sources',text:
 
 
 //res.flush();
-        }, (error) => {
-                        console.log('error=',error);
-                      });
+   //     }, (error) => {
+     //                   console.log('error=',error);
+       //               });
      
         } catch (error) {
               console.error('Error fetching data: ', error);
