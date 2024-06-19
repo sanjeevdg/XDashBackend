@@ -70,7 +70,12 @@ try {
 
         axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
-            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"}).then((response) => {
+            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} , {
+    withCredentials: true,
+    headers: {
+        'Access-Control-Allow-Origin': '*', 
+        'Content-Type': 'application/json'
+    } ).then((response) => {
        // setLoading(false);
         let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
         let dtarr = JSON.parse(ltdata);
