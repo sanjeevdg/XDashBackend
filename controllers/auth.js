@@ -387,5 +387,5 @@ catch (e) {
 return res;
 };
 
-
-module.exports = {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm, getTermById,getTermsList,stream,queryXdashApi,fetchTest} ;
+//module.exports =
+ export {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm, getTermById,getTermsList,stream,queryXdashApi,fetchTest} ;
