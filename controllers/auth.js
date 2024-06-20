@@ -107,10 +107,13 @@ const bytes = new Uint8Array(buffer);
 
         axios.post('https://www.xdash.ai/api/query',{ "query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
-            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} ).then((response) => {
-
-            console.log('RESPONSE-BODY=',response.body);
-            res.send(response.body);
+            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"} ).then(async (response) => {
+                        response.json().then((data) => {
+                            console.log('RESPONSE-BODY=',data);
+            res.send(data);
+                        } )
+            
+            
        // setLoading(false);
     ///    let ltdata  = response.data.substring(0,response.data.indexOf('__LLM_RESPONSE__'));
      ///   let dtarr = JSON.parse(ltdata);
