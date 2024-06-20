@@ -8,6 +8,7 @@ const CryptoJS =require('crypto-js');
 const axios = require('axios');
 const tokens = [];
 const fetch = require('node-fetch');
+import ky from 'ky';
 
 const getTermsList = async (req,res,next) => {
 
@@ -69,6 +70,16 @@ try {
 let body = {"query": req.body.query,
                                 "search_uuid":createQueryHash2(req.body.query) ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
+    const json = await ky.post('https://www.xdash.ai/api/query', {
+  headers: {
+    'content-type': 'application/json'
+  },
+  json: {
+    body: JSON.stringify(body)
+  },
+}).json();
+
+console.log(json);
 /*
         fetch('https://www.xdash.ai/api/query',{
          method:'POST',
