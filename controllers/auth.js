@@ -1,15 +1,13 @@
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken';
-import sequelize from '../utils/database.js';
-import GlossaryTerm from '../models/glossaryterm.js';
-import markdownit from 'markdown-it';
-import Prism from 'prismjs';
-import CryptoJS from 'crypto-js';
-import axios from 'axios';
-//const tokens = [];
-import fetch from 'node-fetch';
-//const ky = require('ky');
-import ky from 'ky';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const sequelize = require('../utils/database.js');
+const GlossaryTerm = require('../models/glossaryterm.js');
+const markdownit = require('markdown-it');
+const Prism = require('prismjs');
+const CryptoJS =require('crypto-js');
+const axios = require('axios');
+const tokens = [];
+const fetch = require('node-fetch');
 
 const getTermsList = async (req,res,next) => {
 
