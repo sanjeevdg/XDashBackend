@@ -1,7 +1,8 @@
 import express from 'express';
 
 
-const {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} = require('../controllers/auth');
+import {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} 
+ from '../controllers/auth';
  
 
 const router = express.Router();
