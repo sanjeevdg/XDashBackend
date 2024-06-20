@@ -1,8 +1,7 @@
-import express from 'express';
+const express =require('express');
 
 
-import {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} 
- from '../controllers/auth';
+const {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} = require('../controllers/auth');
  
 
 const router = express.Router();
@@ -51,5 +50,5 @@ router.use('/', (req, res, next) => {
 });
 
 
-//module.exports = router;
-export default router;
+module.exports = router;
+//export default router;
