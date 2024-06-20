@@ -1,8 +1,6 @@
-const express =require('express');
+const {Sequelize} = require('sequelize');
 
-
-const {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} = require('../controllers/auth');
- 
+const sequelize = require('../utils/database.js');
 
 const GlossaryTerm = sequelize.define('glossaryterms', {
    id: {
