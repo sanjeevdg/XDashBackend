@@ -1,4 +1,4 @@
-const express =require('express');
+import express from 'express';
 
 
 const {addGlossaryTerm,editGlossaryTerm,deleteGlossaryTerm,getTermById,getTermsList,stream,queryXdashApi,fetchTest} = require('../controllers/auth');
