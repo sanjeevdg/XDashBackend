@@ -49,15 +49,16 @@ headers: {
     
 const response = await fetch('https://www.xdash.ai/api/query', { method: 'POST',          
       body:JSON.stringify(body),
-      });
-console.log('mybody',body);
-/*
-  .then(response => response.body)
-  .then(stream => { res.write('mystream');})
-*/
+      }).then(response => response.arrayBuffer())
+.then(buffer => {
 
-const rbody = response.body;
-console.log('rbody=',rbody);
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+
+    console.log(text);
+})
+.catch(error => console.error(error));
+    
   //  res.send(rbody);
 
 
