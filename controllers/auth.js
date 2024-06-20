@@ -46,18 +46,18 @@ const response = await fetch('https://www.xdash.ai/api/query', { method: 'POST',
           responseType: 'stream',
          }, 
       body:JSON.stringify(body),
-      reactNative: { textStreaming: true } });
+      });
 console.log('mybody',body);
 /*
   .then(response => response.body)
   .then(stream => { res.write('mystream');})
 */
 
-const rbody = await response.text();
-res.write(rbody);
+const rbody = await response.json();
+res.send(rbody);
 console.log('rbody=',rbody);
 
-res.end();
+// res.end();
 
 };
 
