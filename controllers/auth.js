@@ -8,7 +8,8 @@ const CryptoJS =require('crypto-js');
 const axios = require('axios');
 const tokens = [];
 const fetch = require('node-fetch');
-import ky from 'ky';
+const ky = require('ky');
+//import ky from 'ky';
 
 const getTermsList = async (req,res,next) => {
 
