@@ -53,7 +53,7 @@ console.log('mybody',body);
   .then(stream => { res.write('mystream');})
 */
 
-const rbody = await response.json();
+const rbody = await response.body;
 res.send(rbody);
 console.log('rbody=',rbody);
 
