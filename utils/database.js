@@ -1,4 +1,4 @@
-import {Sequelize} from 'sequelize';
+const {Sequelize} = require('sequelize');
 
 
 
@@ -38,5 +38,5 @@ const sequelize = new Sequelize('SpunkyFormsDb', 'root', 'sanjeev', {
   }   
 });
 **/
-export default sequelize;
-//module.exports = sequelize;
+//export default sequelize;
+module.exports = sequelize;
