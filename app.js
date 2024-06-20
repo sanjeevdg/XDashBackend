@@ -1,11 +1,11 @@
-import express from "express";
-import http from "http";
-import sequelize from './utils/database.js';
-import cors from 'cors';
+const express = require("express");
+const http = require("http");
+const sequelize = require('./utils/database.js');
+var cors = require('cors');
 
 
-import router from './routes/routes.js';
-import bodyParser from "body-parser";
+const router = require('./routes/routes.js');
+const bodyParser = require("body-parser");
 const app = express();
 
 const GlossaryTerm = require('./models/glossaryterm.js');
