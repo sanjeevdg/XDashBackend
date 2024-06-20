@@ -8,7 +8,7 @@ const CryptoJS =require('crypto-js');
 const axios = require('axios');
 const tokens = [];
 const fetch = require('node-fetch');
-const ky = require('ky');
+//const ky = require('ky');
 //import ky from 'ky';
 
 const getTermsList = async (req,res,next) => {
@@ -63,7 +63,7 @@ res.end();
 
 const queryXdashApi = async (req,res,next) => {
 
-
+import ky from 'ky';
 console.log('received request body-->',req.body);
 try {
       
