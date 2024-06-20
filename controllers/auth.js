@@ -40,11 +40,14 @@ const fetchTest = async (req,res,next) => {
 let body = {query: 'write a rest endpoint in python' ,
             "search_uuid":createQueryHash2('write a rest endpoint in python') ,    
             "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
-const response = await fetch('https://www.xdash.ai/api/query', { method: 'POST',
-          headers: {
+/*
+headers: {
           'Content-Type': 'application/json',  
           responseType: 'stream',
          }, 
+         */
+    
+const response = await fetch('https://www.xdash.ai/api/query', { method: 'POST',          
       body:JSON.stringify(body),
       });
 console.log('mybody',body);
