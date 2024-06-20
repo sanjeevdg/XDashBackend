@@ -37,26 +37,29 @@ const fetchTest = async (req,res,next) => {
     'X-Content-Type-Options': 'nosniff'
   });
 
+let body = {query: 'write a rest endpoint in python' ,
+            "search_uuid":createQueryHash2('write a rest endpoint in python') ,    
+            "visitor_uuid": "bcd25493385e2512be48176f9e1a58ed"};
 const response = await fetch('https://www.xdash.ai/api/query', { method: 'POST',
           headers: {
           'Content-Type': 'application/json',  
           responseType: 'stream',
          }, 
-      body:JSON.stringify({query: 'write a rest endpoint in python' }),
+      body:JSON.stringify(body),
       reactNative: { textStreaming: true } });
+console.log('mybody',body);
 /*
   .then(response => response.body)
   .then(stream => { res.write('mystream');})
 */
 
-const body = await response.text();
-res.write(body);
-console.log(body);
+const rbody = await response.text();
+res.write(rbody);
+console.log('rbody=',rbody);
 
 res.end();
 
 };
-
 
 
 const queryXdashApi = async (req,res,next) => {
