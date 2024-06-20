@@ -4,7 +4,7 @@ import sequelize from './utils/database.js';
 import cors from 'cors';
 
 
-import { router } from './routes/routes.js';
+import router from './routes/routes.js';
 import bodyParser from "body-parser";
 const app = express();
 
