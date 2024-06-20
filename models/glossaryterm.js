@@ -1,6 +1,6 @@
-import {Sequelize} from 'sequelize';
+const {Sequelize} = require('sequelize');
 
-import sequelize from '../utils/database.js';
+const sequelize = require('../utils/database.js');
 
 const GlossaryTerm = sequelize.define('glossaryterms', {
    id: {
